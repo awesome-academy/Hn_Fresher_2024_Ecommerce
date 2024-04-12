@@ -1,5 +1,5 @@
 class HistoriesController < ApplicationController
-  before_action :load_bills, only: %i(index show)
+  before_action :logged_in_user, :load_bills, only: %i(index show)
   before_action :build_bill_items, only: :show
 
   def index; end
@@ -38,7 +38,7 @@ class HistoriesController < ApplicationController
 
   def load_bills
     @pagy, @bills = pagy(Bill.find_all_by_account_id(current_account.id)
-                           .order_by_created_at,
+                             .order_by_created_at,
                          items: Settings.pagy.bill.per_page)
   end
 end

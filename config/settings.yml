@@ -3,6 +3,8 @@ pagy:
     per_page: 9
   bill:
     per_page: 5
+  user:
+    per_page: 8
 cart:
   size:
     default: 0
@@ -17,6 +19,8 @@ bill:
     min: 0
   payment_method:
     max_length: 255
+  status:
+    completed: 1
 product_detail:
   price_0: 0
   price_20: 20
@@ -27,3 +31,10 @@ search_type:
   name: "name"
   category: "category"
   brand: "brand"
+product:
+  product_top: 8
+account:
+  role:
+    title: "role"
+  status:
+    title: "status"
