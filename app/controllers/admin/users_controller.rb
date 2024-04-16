@@ -35,7 +35,8 @@ class Admin::UsersController < Admin::AdminController
 
   def load_users
     @pagy, @users = pagy(Account.without_sensitive_attributes
-                                .order_by_created_at, items: Settings.pagy.user.per_page)
+                                .order_by_created_at,
+                         items: Settings.pagy.user.per_page)
   end
 
   def update_role
